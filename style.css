@@ -55,45 +55,39 @@ body, html {
     font-size: 1rem;
 }
 
-/* Carousel Section */
 .square {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     border: 2px solid #333;
   }
-  
+
   .box {
     width: 50%;
     height: 50%;
     box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
     border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
-  /* Stack slides */
-  .box .slide {
+
+  .box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
   }
-  
-  /* Show first image by default */
-  .box .slide.active {
-    opacity: 1;
-  }
-  
-  /* Popup styles */
+
+  /* Popup */
   .popup {
     display: none;
     position: fixed;
@@ -104,30 +98,41 @@ body, html {
     justify-content: center;
     align-items: center;
   }
-  
+
   .popup-content {
     background: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     max-width: 300px;
-    animation: fadeIn 0.3s ease-in-out;
+    width: 80%;
     position: relative;
+    animation: fadeIn 0.3s ease-in-out;
   }
-  
+
   .popup .close {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 10px;
     font-size: 24px;
     cursor: pointer;
   }
-  
+
   @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to   { opacity: 1; transform: scale(1); }
   }
-  
+
+  #popup-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
 /* Gift Card Section */
 .gift-card-section {
     text-align: center;
@@ -178,4 +183,6 @@ body, html {
     .text-box p {
         font-size: 1.2rem;
     }
+}
+
 }
