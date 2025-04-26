@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bra guide</title>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="/image/fleetfeet.jpg" alt="Company Logo" class="logo">
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="text-box">
+            <h2>Fleet Feet Vermont’s Very Own Gift Guide</h2>
+            <p>
+                Find the perfect gift for every mover in your life, whether they are avid runners, casual walkers, fitness enthusiasts, or just want to be comfortable. Our gift guide features the best gear for every level of activity, designed to support their journey—no matter the pace.
+            </p>
+        </div>
+
+        <!-- Carousel Section -->
+        <div class="square">
+            <div class="box" onclick="showPopup('Top Left Box Info')">
+              <img class="slide" src="image1a.jpg" alt="Slide 1">
+              <img class="slide" src="image1b.jpg" alt="Slide 2">
+              <img class="slide" src="image1c.jpg" alt="Slide 3">
+            </div>
+            <div class="box" onclick="showPopup('Top Right Box Info')">
+              <img class="slide" src="image2a.jpg" alt="Slide 1">
+              <img class="slide" src="image2b.jpg" alt="Slide 2">
+              <img class="slide" src="image2c.jpg" alt="Slide 3">
+            </div>
+            <div class="box" onclick="showPopup('Bottom Left Box Info')">
+              <img class="slide" src="image3a.jpg" alt="Slide 1">
+              <img class="slide" src="image3b.jpg" alt="Slide 2">
+              <img class="slide" src="image3c.jpg" alt="Slide 3">
+            </div>
+            <div class="box" onclick="showPopup('Bottom Right Box Info')">
+              <img class="slide" src="image4a.jpg" alt="Slide 1">
+              <img class="slide" src="image4b.jpg" alt="Slide 2">
+              <img class="slide" src="image4c.jpg" alt="Slide 3">
+            </div>
+          </div>
+          
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close" onclick="closePopup()">&times;</span>
+              <p id="popup-text"></p>
+            </div>
+          </div>
+        <!-- Gift Card Section -->
+        <div class="gift-card-section">
+            <h2>Fleet Feet Gift Cards Are Always Available!</h2>
+            <img src="image/giftcard.jpg" alt="Gift Card" class="gift-card-image">
+        </div>
+    </div>
+  
+      
+    <script src="main.js"></script>
+</body>
+</html>
+

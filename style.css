@@ -1,0 +1,181 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom, rgba(240, 242, 245, 0.7), rgba(225, 228, 233, 0.7)),
+                url('/image/snow2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main Container */
+.landing-container {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid rgba(70, 130, 180, 0.6);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Text Box */
+.text-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-box h2 {
+    color: #4682B4;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+}
+
+.text-box p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Carousel Section */
+.square {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 2px solid #333;
+  }
+  
+  .box {
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  /* Stack slides */
+  .box .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* Show first image by default */
+  .box .slide.active {
+    opacity: 1;
+  }
+  
+  /* Popup styles */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .popup .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  
+/* Gift Card Section */
+.gift-card-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gift-card-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #4682B4;
+}
+
+.gift-card-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .gift-list {
+        column-count: 2; /* Two columns for medium screens */
+    }
+
+    .text-box h2 {
+        font-size: 2rem;
+    }
+
+    .text-box p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gift-list {
+        column-count: 3; /* Three columns for large screens */
+    }
+
+    .text-box h2 {
+        font-size: 2.2rem;
+    }
+
+    .text-box p {
+        font-size: 1.2rem;
+    }
+}
