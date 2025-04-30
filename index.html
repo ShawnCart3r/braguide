@@ -31,58 +31,64 @@
         </div>
 
         <!-- Carousel Section -->
-        <div class="square">
-            <div class="box" onclick="showPopup(' Chicken Legs', ['cow', 'frogs', 'nuggets', 'pickles', 'sloth', 'strawberry', 'turtles'])">
-              <img class="slide" src="/image/cow.jpg" alt="slide 1">
-              <img class="slide" src="/image/frogs.jpg" alt="Slide 2">
-              <img class="slide" src="/image/nuggets.jpg" alt="Slide 3">
-              <img class="slide" src="/image/pickles.jpg" alt="Slide 4">
-              <img class="slide" src="/image/sloth.jpg" alt="Slide 5">
-              <img class="slide" src="/image/strawberry.jpg" alt="Slide 6">
-              <img class="slide" src="/image/turtles.jpg" alt="Slide 7">
-              
-            </div>
-            <div class="box" onclick="showPopup('Lululemon', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
-                <img class="slide" src="/image/turtles.jpg" alt="Slide 1">
-                <img class="slide" src="/image/strawberry.jpg" alt="Slide 2">
-                <img class="slide" src="/image/sloth.jpg" alt="Slide 3">
-                
-            </div>
-            <div class="box" onclick="showPopup(' Brooks', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
-                <img class="slide" src="/image/nuggets.jpg" alt="Slide 1">
-                <img class="slide" src="/image/strawberry.jpg" alt="Slide 2">
-                <img class="slide" src="/image/turtles.jpg" alt="Slide 3">
-                <img class="slide" src="/image/sloth.jpg" alt="Slide 4">
-                <img class="slide" src="/image/pickles.jpg" alt="Slide 5">
-                <img class="slide" src="/image/cow.jpg" alt="Slide 6">
-                <img class="slide" src="/image/frogs.jpg" alt="Slide 7">
-            </div>
-            <div class="box" onclick="showPopup(' Rabbit', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
-                <img class="slide" src="/image/nuggets.jpg" alt="Slide 1">
-                <img class="slide" src="/image/frogs.jpg" alt="Slide 2">
-                <img class="slide" src="/image/sloth.jpg" alt="Slide 3">
-                <img class="slide" src="/image/pickles.jpg" alt="Slide 4">
-                <img class="slide" src="/image/turtles.jpg" alt="Slide 5">
-                <img class="slide" src="/image/strawberry.jpg" alt="Slide 6">
-                <img class="slide" src="/image/cow.jpg" alt="Slide 7">
-          </div>
-          
-          <!-- Popup -->
-          <div id="popup" class="popup">
-            <div class="popup-content">
-              <span class="close" onclick="closePopup()">&times;</span>
-              <h2 id="popup-title"></h2>
-              <ol id="popup-list"></ol>
-            </div>
-          </div>
-        <!-- Gift Card Section -->
-        <div class="gift-card-section">
-            <h2>Fleet Feet Gift Cards Are Always Available!</h2>
-            <img src="image/giftcard.jpg" alt="Gift Card" class="gift-card-image">
-        </div>
+        <!-- Grid of boxes -->
+<div class="square">
+    <div class="box" onclick="showPopup('Chicken Legs', ['cow', 'frogs', 'nuggets', 'pickles', 'sloth', 'strawberry', 'turtles'])">
+      <img class="slide" src="/image/cow.jpg" alt="slide 1">
+      <img class="slide" src="/image/frogs.jpg" alt="Slide 2">
+      <img class="slide" src="/image/nuggets.jpg" alt="Slide 3">
+      <img class="slide" src="/image/pickles.jpg" alt="Slide 4">
+      <img class="slide" src="/image/sloth.jpg" alt="Slide 5">
+      <img class="slide" src="/image/strawberry.jpg" alt="Slide 6">
+      <img class="slide" src="/image/turtles.jpg" alt="Slide 7">
     </div>
+  
+    <div class="box" onclick="showPopup('Lululemon', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
+      <img class="slide" src="/image/turtles.jpg" alt="Slide 1">
+      <img class="slide" src="/image/strawberry.jpg" alt="Slide 2">
+      <img class="slide" src="/image/sloth.jpg" alt="Slide 3">
+    </div>
+  
+    <div class="box" onclick="showPopup('Brooks', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
+      <img class="slide" src="/image/nuggets.jpg" alt="Slide 1">
+      <img class="slide" src="/image/strawberry.jpg" alt="Slide 2">
+      <img class="slide" src="/image/turtles.jpg" alt="Slide 3">
+      <img class="slide" src="/image/sloth.jpg" alt="Slide 4">
+      <img class="slide" src="/image/pickles.jpg" alt="Slide 5">
+      <img class="slide" src="/image/cow.jpg" alt="Slide 6">
+      <img class="slide" src="/image/frogs.jpg" alt="Slide 7">
+    </div>
+  
+    <div class="box" onclick="showPopup('Rabbit', ['Wake up', 'Brush teeth', 'Eat breakfast'])">
+      <img class="slide" src="/image/nuggets.jpg" alt="Slide 1">
+      <img class="slide" src="/image/frogs.jpg" alt="Slide 2">
+      <img class="slide" src="/image/sloth.jpg" alt="Slide 3">
+      <img class="slide" src="/image/pickles.jpg" alt="Slide 4">
+      <img class="slide" src="/image/turtles.jpg" alt="Slide 5">
+      <img class="slide" src="/image/strawberry.jpg" alt="Slide 6">
+      <img class="slide" src="/image/cow.jpg" alt="Slide 7">
+    </div>
+  </div>
+  
+  <!-- Popup Modal -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2 id="popup-title"></h2>
+      <ol id="popup-list"></ol>
+    </div>
+  </div>
+          
+          <!-- Gift Card Section OUTSIDE square -->
+          <div class="gift-wrapper">
+            <div class="gift-card-section">
+              <h2>Fleet Feet Gift Cards Are Always Available!</h2>
+              <img src="image/giftcard.jpg" alt="Gift Card" class="gift-card-image">
+            </div>
+          </div>
   
       
     <script src="main.js"></script>
 </body>
 </html>
+
