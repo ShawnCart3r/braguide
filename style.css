@@ -61,8 +61,7 @@
     gap: 10px;
     max-width: 400px;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 20px auto;
     border: 2px solid #333;
     padding: 10px;
     background: #fff;
@@ -81,6 +80,12 @@
     cursor: pointer;
     background: #f8f8f8;
     border-radius: 6px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .box img {
@@ -97,30 +102,33 @@
     display: none;
     position: fixed;
     z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.15); /* very subtle dark */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
   
   .popup-content {
     background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
-    max-width: 300px;
-    width: 80%;
+    max-width: 420px; /* ⬅️ Square width */
+    width: 100%;
+    aspect-ratio: 1 / 1; /* ⬅️ Make the whole popup square-ish */
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    color: #111; /* ✅ Force dark text */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .popup .close {
@@ -128,7 +136,14 @@
     top: 10px;
     right: 20px;
     font-size: 24px;
+    font-weight: bold;
+    color: #333;
     cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .popup .close:hover {
+    color: #000;
   }
   
   @keyframes fadeIn {
@@ -136,15 +151,72 @@
     to   { opacity: 1; transform: scale(1); }
   }
   
+  #slideshow-container {
+    width: 100%;
+    height: 240px; /* ⬅️ Taller slideshow */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0 10px 0;
+  }
+  
+  #slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
   #popup-list {
     list-style-type: decimal;
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  
+  #popup-description {
+    margin-top: 15px;
+    font-size: 0.92rem;
+    color: #222;
+    line-height: 1.5;
     text-align: left;
   }
+  
+  /* ✅ Mobile Adjustments */
+  @media (max-width: 480px) {
+    .square {
+      grid-template-columns: 1fr;
+      max-width: 95%;
+      gap: 8px;
+    }
+  
+    .popup-content {
+      max-width: 95%; /* ⬅️ Still responsive */
+      padding: 18px;
+    }
+  
+    #slideshow-container {
+      height: 200px;
+    }
+  
+    #popup-list {
+      font-size: 0.9rem;
+    }
+  
+    #popup-description {
+      font-size: 0.88rem;
+    }
+  
+    .popup .close {
+      font-size: 22px;
+      top: 8px;
+      right: 14px;
+    }
+  }
+  
   
   /* Gift Card Section */
   .gift-card-section {
