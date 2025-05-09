@@ -99,48 +99,53 @@
   
   /* Popup Modal */
   .popup {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .popup-content {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 20px;
-    border-radius: 16px;
-    text-align: center;
-    max-width: 420px; /* ⬅️ Square width */
-    width: 100%;
-    aspect-ratio: 1 / 1; /* ⬅️ Make the whole popup square-ish */
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-    color: #111;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .popup .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Darker background overlay */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup-content {
+  width: 90vw;
+  max-width: 600px;
+  max-height: 90vh; /* gives it room for tall images */
+  height: auto;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto; /* allows scroll if needed */
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.popup-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
   
   .popup .close:hover {
     color: #000;
@@ -153,19 +158,21 @@
   
   #slideshow-container {
     width: 100%;
-    height: 240px; /* ⬅️ Taller slideshow */
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0 10px 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
   }
   
   #slideshow-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;          /* Keep it square like the product grid */
+    object-fit: contain;          /* Ensures the full bra image fits */
+    border-radius: 12px;
   }
-  
   #popup-list {
     list-style-type: decimal;
     padding-left: 20px;
